@@ -16,6 +16,7 @@ def payment():
     global balance
     if request.method == 'POST':
         # Crawl payment data
+        lcd("Processing...", "")
         lcd("", "3")
         time.sleep(1)
         lcd("", "2")
