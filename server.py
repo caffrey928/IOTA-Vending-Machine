@@ -18,6 +18,7 @@ def payment():
         new_balance = get_balance()
         print("Balance: ", new_balance)
 
+        payment = 0
         if(new_balance == -1):
             payment = 0
         else:
