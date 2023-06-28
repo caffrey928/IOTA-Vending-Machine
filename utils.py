@@ -10,7 +10,8 @@ def get_balance():
     response = requests.get(IOTA_URL).json()
     print(response)
 
-    if response.balance == None:
+    if response['address']['balance'] == None:
+        print("Error: Fetch fail! No balance!")
         return -1
 
     return response.balance
