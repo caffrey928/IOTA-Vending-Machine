@@ -16,6 +16,9 @@ def payment():
     global balance
     if request.method == 'POST':
         # Crawl payment data
+        lcd("Wait for 3 seconds...")
+        time.sleep(3)
+        
         new_balance = get_balance()
         print("Balance: ", new_balance)
 
@@ -29,7 +32,7 @@ def payment():
         # Check the payment
         if(payment <= 0):
             lcd("Failed Payment!")
-        elif(payment < 5):
+        elif(payment < 5000000):
             lcd("No enough money!")
         else:
             lcd("Success Payment!")
