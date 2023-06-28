@@ -15,6 +15,7 @@ def payment():
     if request.method == 'POST':
         # Crawl payment data
         new_balance = get_balance()
+        print("Balance: ", new_balance)
 
         if(new_balance == -1):
             payment = 0
@@ -44,6 +45,7 @@ balance = 0
 if __name__ == '__main__':
     lcd("Pay 5Mi to buy!")
     balance = get_balance()
+    print("Balance: ", balance)
     p = multiprocessing.Process(target=detect_button, args=())
     p.start()
     app.run(host='0.0.0.0', port=8000, debug=True, use_reloader=False)

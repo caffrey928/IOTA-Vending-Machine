@@ -7,7 +7,11 @@ IOTA_URL = "https://explorer-api.iota.org/search/mainnet/iota1qqc9mzff65d8d44y7g
 PAYMENT_URL = "http://localhost:8000/payment"
 
 def get_balance():
-    response = requests.get(IOTA_URL).json()
+    try:
+        response = requests.get(IOTA_URL).json()
+    except:
+        print("Error: Fetch fail!")
+        return -1
     print(response)
 
     if response['address']['balance'] == None:
