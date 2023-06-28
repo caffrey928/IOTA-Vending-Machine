@@ -5,6 +5,7 @@ import multiprocessing
 
 
 app = Flask(__name__)
+balance = 0
 
 @app.route('/')
 def hello():
@@ -41,7 +42,6 @@ def payment():
 
 # run "python3 server.py" to start development server
 # run "gunicorn server:app" to start production depployment server
-balance = 0
 if __name__ == '__main__':
     lcd("Pay 5Mi to buy!")
     balance = get_balance()
