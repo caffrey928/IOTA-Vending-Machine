@@ -3,7 +3,7 @@ import time
 import drivers
 import requests
 
-IOTA_URL = "https://explorer-api.iota.org/search/mainnet/iota1qqc9mzff65d8d44y7gp0s4jrt7rdygua2kqmh242apcwhdcw0236sxh6esw"
+IOTA_URL = "https://explorer-api.iota.org/search/mainnet/iota1qz5awygehndysvu9x8qw2hln46ud8mleckwna8jr6vzh33re00hvs3c4aku"
 PAYMENT_URL = "http://localhost:8000/payment"
 
 def get_balance():
