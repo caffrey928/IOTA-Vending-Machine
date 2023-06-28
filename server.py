@@ -13,6 +13,7 @@ def hello():
     
 @app.route('/payment', methods=['POST'])
 def payment():
+    global balance
     if request.method == 'POST':
         # Crawl payment data
         new_balance = get_balance()
