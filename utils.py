@@ -58,10 +58,8 @@ def lcd(msg1 = "IOTA Machine", msg2 = "Pay 5Mi to buy"):
     try:
         # print("Writing to display")
         # Remember that your sentences can only be 16 characters long!
-        if msg1 != "Empty String":
-            display.lcd_display_string(msg1, 1)
-        if msg2 != "":
-            display.lcd_display_string(msg2, 2)
+        display.lcd_display_string(msg1, 1)
+        display.lcd_display_string(msg2, 2)
     except KeyboardInterrupt:
         # If there is a KeyboardInterrupt (when you press ctrl+c), exit the program and cleanup
         print("Cleaning up!")
