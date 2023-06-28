@@ -14,7 +14,7 @@ def get_balance():
         print("Error: Fetch fail! No balance!")
         return -1
 
-    return response.balance
+    return response['address']['balance']
 
 def pusher():
     CONTROL_PIN = 11
