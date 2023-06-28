@@ -49,20 +49,19 @@ def pusher():
         GPIO.cleanup()
         print("End")
 
-def lcd(message = "Pay 5Mi to buy"):
+def lcd(msg1 = "IOTA Machine", msg2 = "Pay 5Mi to buy"):
     # Load the driver and set it to "display"
     # If you use something from the driver library use the "display." prefix first
     display = drivers.Lcd()
 
     # Main body of code
     try:
-        print("Writing to display")
+        # print("Writing to display")
         # Remember that your sentences can only be 16 characters long!
-        if message != "Pay 5Mi to buy!":
-            display.lcd_display_string("Processing...", 1)
-        else:
-            display.lcd_display_string("IOTA Machine", 1)
-        display.lcd_display_string(message, 2)
+        if msg1 != "":
+            display.lcd_display_string(msg1, 1)
+        if msg2 != "":
+            display.lcd_display_string(msg2, 2)
     except KeyboardInterrupt:
         # If there is a KeyboardInterrupt (when you press ctrl+c), exit the program and cleanup
         print("Cleaning up!")

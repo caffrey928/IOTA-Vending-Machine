@@ -16,11 +16,11 @@ def payment():
     global balance
     if request.method == 'POST':
         # Crawl payment data
-        lcd("3")
+        lcd("", "3")
         time.sleep(1)
-        lcd("2")
+        lcd("", "2")
         time.sleep(1)
-        lcd("1")
+        lcd("", "1")
         time.sleep(1)
 
         new_balance = get_balance()
@@ -35,16 +35,16 @@ def payment():
         
         # Check the payment
         if(payment <= 0):
-            lcd("Failed Payment!")
+            lcd("Processing...", "Failed Payment!")
         elif(payment < 5000000):
-            lcd("No enough money!")
+            lcd("Processing...", "No enough money!")
         else:
-            lcd("Success Payment!")
+            lcd("Processing...", "Success Payment!")
             pusher()
         
         time.sleep(3)
 
-        lcd("Pay 5Mi to buy!")
+        lcd("IOTA Machine", "Pay 5Mi to buy!")
         
         # Return the response
         return "Finish Payment!"
@@ -52,7 +52,7 @@ def payment():
 # run "python3 server.py" to start development server
 # run "gunicorn server:app" to start production depployment server
 if __name__ == '__main__':
-    lcd("Pay 5Mi to buy!")
+    lcd("IOTA Machine", "Pay 5Mi to buy!")
     balance = get_balance()
     print("Balance: ", balance)
     p = multiprocessing.Process(target=detect_button, args=())
