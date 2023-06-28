@@ -16,9 +16,13 @@ def payment():
     global balance
     if request.method == 'POST':
         # Crawl payment data
-        lcd("Wait for 3 seconds...")
-        time.sleep(3)
-        
+        lcd("3")
+        time.sleep(1)
+        lcd("2")
+        time.sleep(1)
+        lcd("1")
+        time.sleep(1)
+
         new_balance = get_balance()
         print("Balance: ", new_balance)
 
